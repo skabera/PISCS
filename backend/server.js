@@ -51,13 +51,7 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
-// --- DB MIGRATIONS ---
-// Safely add service_end_date to invitations if it doesn't exist yet
-db.run('ALTER TABLE invitations ADD COLUMN service_end_date TEXT', (err) => {
-  if (err && !err.message.includes('duplicate column')) {
-    console.error('Migration error (service_end_date):', err.message);
-  }
-});
+
 
 // Auth Middleware
 const authenticateToken = (req, res, next) => {
