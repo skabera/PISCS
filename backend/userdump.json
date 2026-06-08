@@ -1,0 +1,572 @@
+[
+  {
+    "id": 3,
+    "name": "Admin User",
+    "email": "admin@piscs.rw",
+    "role": "admin",
+    "field_id": null,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 12,
+    "name": "Pr. Pastor 2",
+    "email": "pastor2@piscs.rw",
+    "role": "pastor",
+    "field_id": 2,
+    "district_id": 3,
+    "church_id": 4,
+    "church_name": "North District B SDA Church 2"
+  },
+  {
+    "id": 13,
+    "name": "Pr. Pastor 3",
+    "email": "pastor3@piscs.rw",
+    "role": "pastor",
+    "field_id": 2,
+    "district_id": 3,
+    "church_id": "",
+    "church_name": ""
+  },
+  {
+    "id": 14,
+    "name": "Pr. Pastor 4",
+    "email": "pastor4@piscs.rw",
+    "role": "pastor",
+    "field_id": 3,
+    "district_id": 4,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 15,
+    "name": "Pr. Valentin",
+    "email": "pastor1@piscs.rw",
+    "role": "pastor",
+    "field_id": 8,
+    "district_id": 25,
+    "church_id": 33,
+    "church_name": "Kicukiro church"
+  },
+  {
+    "id": 16,
+    "name": "Pr. Pastor 7",
+    "email": "pastor7@piscs.rw",
+    "role": "pastor",
+    "field_id": 4,
+    "district_id": 7,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 17,
+    "name": "Pr. Pastor 8",
+    "email": "pastor8@piscs.rw",
+    "role": "pastor",
+    "field_id": 5,
+    "district_id": 8,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 18,
+    "name": "Pr. Pastor 5",
+    "email": "pastor5@piscs.rw",
+    "role": "pastor",
+    "field_id": 8,
+    "district_id": 5,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 19,
+    "name": "Pr. Pastor 10",
+    "email": "pastor10@piscs.rw",
+    "role": "pastor",
+    "field_id": 6,
+    "district_id": 10,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 20,
+    "name": "Pr. Pastor 11",
+    "email": "pastor11@piscs.rw",
+    "role": "pastor",
+    "field_id": 6,
+    "district_id": 11,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 21,
+    "name": "Pr. Pastor 12",
+    "email": "pastor12@piscs.rw",
+    "role": "pastor",
+    "field_id": 1,
+    "district_id": 12,
+    "church_id": 22,
+    "church_name": "East District B SDA Church 1"
+  },
+  {
+    "id": 22,
+    "name": "Pr. Pastor 13",
+    "email": "pastor13@piscs.rw",
+    "role": "pastor",
+    "field_id": 7,
+    "district_id": 13,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 23,
+    "name": "Pr. Pastor 14",
+    "email": "pastor14@piscs.rw",
+    "role": "pastor",
+    "field_id": 1,
+    "district_id": 14,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 24,
+    "name": "Pr. Pastor 15",
+    "email": "pastor15@piscs.rw",
+    "role": "pastor",
+    "field_id": 7,
+    "district_id": 15,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 25,
+    "name": "Pr. Pastor 6",
+    "email": "pastor6@piscs.rw",
+    "role": "pastor",
+    "field_id": 4,
+    "district_id": 6,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 26,
+    "name": "Pr. Pastor 9",
+    "email": "pastor9@piscs.rw",
+    "role": "pastor",
+    "field_id": 5,
+    "district_id": 9,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 27,
+    "name": "Pr. Pastor 16",
+    "email": "pastor16@piscs.rw",
+    "role": "pastor",
+    "field_id": 3,
+    "district_id": 16,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 28,
+    "name": "Pr. Preacher 1",
+    "email": "preacher_0_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 8,
+    "district_id": 25,
+    "church_id": 33,
+    "church_name": "Kicukiro church"
+  },
+  {
+    "id": 29,
+    "name": "Pr. Preacher 4",
+    "email": "preacher_1_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 2,
+    "district_id": 2,
+    "church_id": 2,
+    "church_name": "North District A SDA Church 2"
+  },
+  {
+    "id": 30,
+    "name": "Pr. Preacher 5",
+    "email": "preacher_2_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 2,
+    "district_id": 3,
+    "church_id": 3,
+    "church_name": "North District B SDA Church 1"
+  },
+  {
+    "id": 31,
+    "name": "Pr. Preacher 9",
+    "email": "preacher_4_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 8,
+    "district_id": 5,
+    "church_id": 7,
+    "church_name": "Central District B SDA Church 1"
+  },
+  {
+    "id": 32,
+    "name": "Pr. Preacher 10",
+    "email": "preacher_4_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 8,
+    "district_id": 5,
+    "church_id": 8,
+    "church_name": "Central District B SDA Church 2"
+  },
+  {
+    "id": 33,
+    "name": "Pr. Preacher 3",
+    "email": "preacher_1_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 2,
+    "district_id": 2,
+    "church_id": 9,
+    "church_name": "North District A SDA Church 1"
+  },
+  {
+    "id": 34,
+    "name": "Pr. Preacher 11",
+    "email": "preacher_5_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 4,
+    "district_id": 6,
+    "church_id": 10,
+    "church_name": "North-West District A SDA Church 1"
+  },
+  {
+    "id": 35,
+    "name": "Pr. Preacher 12",
+    "email": "preacher_5_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 4,
+    "district_id": 6,
+    "church_id": 11,
+    "church_name": "North-West District A SDA Church 2"
+  },
+  {
+    "id": 36,
+    "name": "Pr. Preacher 13",
+    "email": "preacher_6_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 4,
+    "district_id": 7,
+    "church_id": 12,
+    "church_name": "North-West District B SDA Church 1"
+  },
+  {
+    "id": 37,
+    "name": "Pr. Preacher 14",
+    "email": "preacher_6_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 4,
+    "district_id": 7,
+    "church_id": 13,
+    "church_name": "North-West District B SDA Church 2"
+  },
+  {
+    "id": 38,
+    "name": "Pr. Preacher 15",
+    "email": "preacher_7_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 5,
+    "district_id": 8,
+    "church_id": 14,
+    "church_name": "South District A SDA Church 1"
+  },
+  {
+    "id": 39,
+    "name": "Pr. Preacher 16",
+    "email": "preacher_7_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 5,
+    "district_id": 8,
+    "church_id": 15,
+    "church_name": "South District A SDA Church 2"
+  },
+  {
+    "id": 40,
+    "name": "Pr. Preacher 17",
+    "email": "preacher_8_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 5,
+    "district_id": 9,
+    "church_id": 16,
+    "church_name": "South District B SDA Church 1"
+  },
+  {
+    "id": 41,
+    "name": "Pr. Preacher 18",
+    "email": "preacher_8_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 5,
+    "district_id": 9,
+    "church_id": 17,
+    "church_name": "South District B SDA Church 2"
+  },
+  {
+    "id": 42,
+    "name": "Pr. Preacher 19",
+    "email": "preacher_9_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 6,
+    "district_id": 10,
+    "church_id": 18,
+    "church_name": "South-East District A SDA Church 1"
+  },
+  {
+    "id": 43,
+    "name": "Pr. Preacher 20",
+    "email": "preacher_9_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 6,
+    "district_id": 10,
+    "church_id": 19,
+    "church_name": "South-East District A SDA Church 2"
+  },
+  {
+    "id": 44,
+    "name": "Pr. Preacher 21",
+    "email": "preacher_10_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 6,
+    "district_id": 11,
+    "church_id": 20,
+    "church_name": "South-East District B SDA Church 1"
+  },
+  {
+    "id": 45,
+    "name": "Pr. Preacher 22",
+    "email": "preacher_10_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 6,
+    "district_id": 11,
+    "church_id": 21,
+    "church_name": "South-East District B SDA Church 2"
+  },
+  {
+    "id": 46,
+    "name": "Pr. Preacher 23",
+    "email": "preacher_11_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 1,
+    "district_id": 12,
+    "church_id": 22,
+    "church_name": "East District B SDA Church 1"
+  },
+  {
+    "id": 47,
+    "name": "Pr. Preacher 24",
+    "email": "preacher_11_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 1,
+    "district_id": 12,
+    "church_id": 23,
+    "church_name": "East District B SDA Church 2"
+  },
+  {
+    "id": 48,
+    "name": "Pr. Preacher 25",
+    "email": "preacher_12_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 7,
+    "district_id": 13,
+    "church_id": 24,
+    "church_name": "West District B SDA Church 1"
+  },
+  {
+    "id": 49,
+    "name": "Pr. Preacher 26",
+    "email": "preacher_12_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 7,
+    "district_id": 13,
+    "church_id": 25,
+    "church_name": "West District B SDA Church 2"
+  },
+  {
+    "id": 50,
+    "name": "Pr. Preacher 27",
+    "email": "preacher_13_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 1,
+    "district_id": 14,
+    "church_id": 26,
+    "church_name": "East District A SDA Church 1"
+  },
+  {
+    "id": 51,
+    "name": "Pr. Preacher 28",
+    "email": "preacher_13_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 1,
+    "district_id": 14,
+    "church_id": 27,
+    "church_name": "East District A SDA Church 2"
+  },
+  {
+    "id": 52,
+    "name": "Pr. Preacher 29",
+    "email": "preacher_14_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 7,
+    "district_id": 15,
+    "church_id": 28,
+    "church_name": "West District A SDA Church 1"
+  },
+  {
+    "id": 53,
+    "name": "Pr. Preacher 30",
+    "email": "preacher_14_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 7,
+    "district_id": 15,
+    "church_id": 29,
+    "church_name": "West District A SDA Church 2"
+  },
+  {
+    "id": 54,
+    "name": "Pr. Preacher 31",
+    "email": "preacher_15_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 3,
+    "district_id": 16,
+    "church_id": 30,
+    "church_name": "North-East District B SDA Church 1"
+  },
+  {
+    "id": 55,
+    "name": "Pr. Preacher 32",
+    "email": "preacher_15_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 3,
+    "district_id": 16,
+    "church_id": 31,
+    "church_name": "North-East District B SDA Church 2"
+  },
+  {
+    "id": 56,
+    "name": "Pr. Preacher 2",
+    "email": "preacher_0_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 8,
+    "district_id": 1,
+    "church_id": 32,
+    "church_name": "Central District A SDA Church 2"
+  },
+  {
+    "id": 57,
+    "name": "Pr. Preacher 8",
+    "email": "preacher_3_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 3,
+    "district_id": 4,
+    "church_id": 6,
+    "church_name": "North-East District A SDA Church 2"
+  },
+  {
+    "id": 58,
+    "name": "Pr. Preacher 6",
+    "email": "preacher_2_1@piscs.rw",
+    "role": "preacher",
+    "field_id": 2,
+    "district_id": 3,
+    "church_id": 4,
+    "church_name": "North District B SDA Church 2"
+  },
+  {
+    "id": 59,
+    "name": "Pr. Preacher 7",
+    "email": "preacher_3_0@piscs.rw",
+    "role": "preacher",
+    "field_id": 3,
+    "district_id": 4,
+    "church_id": 5,
+    "church_name": "North-East District A SDA Church 1"
+  },
+  {
+    "id": 4,
+    "name": "Secretary - Central Rwanda Field",
+    "email": "sec_central_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 8,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 5,
+    "name": "Secretary - North-West Rwanda Field",
+    "email": "sec_north_west_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 4,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 6,
+    "name": "Secretary - South Rwanda Field",
+    "email": "sec_south_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 5,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 7,
+    "name": "Secretary - South-East Rwanda Field",
+    "email": "sec_south_east_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 6,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 8,
+    "name": "Secretary - West Rwanda Field",
+    "email": "sec_west_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 7,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 9,
+    "name": "Secretary - North Rwanda Field",
+    "email": "sec_north_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 2,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 10,
+    "name": "Secretary - North-East Rwanda Field",
+    "email": "sec_north_east_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 3,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  },
+  {
+    "id": 11,
+    "name": "Secretary - East Central Rwanda Field",
+    "email": "sec_east_central_rwanda_field@piscs.rw",
+    "role": "secretary",
+    "field_id": 1,
+    "district_id": null,
+    "church_id": null,
+    "church_name": null
+  }
+]

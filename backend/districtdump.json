@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Central District A",
+    "field_id": 8,
+    "pastor_id": null
+  },
+  {
+    "id": 2,
+    "name": "North District A",
+    "field_id": 2,
+    "pastor_id": 12
+  },
+  {
+    "id": 3,
+    "name": "North District B",
+    "field_id": 2,
+    "pastor_id": 13
+  },
+  {
+    "id": 4,
+    "name": "North-East District A",
+    "field_id": 3,
+    "pastor_id": null
+  },
+  {
+    "id": 5,
+    "name": "Central District B",
+    "field_id": 8,
+    "pastor_id": null
+  },
+  {
+    "id": 6,
+    "name": "North-West District A",
+    "field_id": 4,
+    "pastor_id": null
+  },
+  {
+    "id": 7,
+    "name": "North-West District B",
+    "field_id": 4,
+    "pastor_id": null
+  },
+  {
+    "id": 8,
+    "name": "South District A",
+    "field_id": 5,
+    "pastor_id": null
+  },
+  {
+    "id": 9,
+    "name": "South District B",
+    "field_id": 5,
+    "pastor_id": null
+  },
+  {
+    "id": 10,
+    "name": "South-East District A",
+    "field_id": 6,
+    "pastor_id": null
+  },
+  {
+    "id": 11,
+    "name": "South-East District B",
+    "field_id": 6,
+    "pastor_id": null
+  },
+  {
+    "id": 12,
+    "name": "East District B",
+    "field_id": 1,
+    "pastor_id": null
+  },
+  {
+    "id": 13,
+    "name": "West District B",
+    "field_id": 7,
+    "pastor_id": null
+  },
+  {
+    "id": 14,
+    "name": "East District A",
+    "field_id": 1,
+    "pastor_id": null
+  },
+  {
+    "id": 15,
+    "name": "West District A",
+    "field_id": 7,
+    "pastor_id": null
+  },
+  {
+    "id": 16,
+    "name": "North-East District B",
+    "field_id": 3,
+    "pastor_id": null
+  },
+  {
+    "id": 17,
+    "name": "Central Rwanda Field - Default District",
+    "field_id": 8,
+    "pastor_id": 18
+  },
+  {
+    "id": 18,
+    "name": "West Rwanda Field - Default District",
+    "field_id": 7,
+    "pastor_id": null
+  },
+  {
+    "id": 19,
+    "name": "North-East Rwanda Field - Default District",
+    "field_id": 3,
+    "pastor_id": null
+  },
+  {
+    "id": 20,
+    "name": "North Rwanda Field - Default District",
+    "field_id": 2,
+    "pastor_id": null
+  },
+  {
+    "id": 21,
+    "name": "East Central Rwanda Field - Default District",
+    "field_id": 1,
+    "pastor_id": null
+  },
+  {
+    "id": 22,
+    "name": "South-East Rwanda Field - Default District",
+    "field_id": 6,
+    "pastor_id": null
+  },
+  {
+    "id": 23,
+    "name": "North-West Rwanda Field - Default District",
+    "field_id": 4,
+    "pastor_id": null
+  },
+  {
+    "id": 24,
+    "name": "South Rwanda Field - Default District",
+    "field_id": 5,
+    "pastor_id": null
+  },
+  {
+    "id": 25,
+    "name": "kicukiro",
+    "field_id": 8,
+    "pastor_id": 15
+  }
+]

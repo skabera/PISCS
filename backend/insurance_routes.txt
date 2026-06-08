@@ -1,0 +1,177 @@
+﻿
+// ======== INSURANCE DOCUMENT ROUTES ========
+
+// Upload Insurance Document (Pastor uploads after invitation is approved)
+app.post('/api/insurance/upload', authenticateToken, upload.single('insurance_file'), (req, res) => {
+  const { role, id: userId } = req.user;
+  const { invitation_id, document_type } = req.body;
+  const invitationId = parseInt(invitation_id);
+
+  if (role !== 'pastor') {
+    return res.status(403).json({ error: 'Only pastors can upload insurance documents' });
+  }
+
+  if (!req.file) {
+    return res.status(400).json({ error: 'No file uploaded' });
+  }
+
+  // Get invitation to verify pastor is the one who invited and status is approved
+  db.get(`
+    SELECT i.*, i.target_user_id as preacher_id
+    FROM invitations i
+    WHERE i.id = ? AND i.status = 'approved'
+  `, [invitationId], (err, inv) => {
+    if (err || !inv) {
+      return res.status(404).json({ error: 'Invitation not found or not yet approved' });
+    }
+
+    if (inv.requesting_pastor_id !== userId) {
+      return res.status(403).json({ error: 'Only the pastor who invited can upload insurance' });
+    }
+
+    const documentUrl = `/uploads/${req.file.filename}`;
+    const documentType = document_type || 'insurance';
+    const fileName = req.file.originalname;
+
+    db.run(`
+      INSERT INTO insurance_documents 
+      (invitation_id, preacher_id, uploaded_by_pastor_id, document_url, document_type, file_name)
+      VALUES (?, ?, ?, ?, ?, ?)
+    `, [invitationId, inv.preacher_id, userId, documentUrl, documentType, fileName], function(err) {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+
+      logAudit(userId, 'INSURANCE_UPLOADED', {
+        invitation_id: invitationId,
+        preacher_id: inv.preacher_id,
+        document_type: documentType,
+        file_name: fileName
+      });
+
+      // Notify preacher that insurance was uploaded
+      const refId = `#${invitationId.toString().padStart(4, '0')}`;
+      notify(inv.preacher_id, invitationId,
+        '📄 Insurance Document Uploaded',
+        `Insurance documentation for invitation ${refId} has been uploaded by the pastor.`);
+
+      res.json({
+        id: this.lastID,
+        message: 'Insurance document uploaded successfully',
+        document_url: documentUrl
+      });
+    });
+  });
+});
+
+// Get Insurance Documents for an Invitation
+app.get('/api/insurance/invitation/:id', authenticateToken, (req, res) => {
+  const { role, id: userId, field_id } = req.user;
+  const invitationId = parseInt(req.params.id);
+
+  db.get(`
+    SELECT i.requesting_pastor_id, i.target_user_id, i.status, u.field_id as pastor_field_id, 
+           tu.field_id as preacher_field_id
+    FROM invitations i
+    JOIN users u ON i.requesting_pastor_id = u.id
+    JOIN users tu ON i.target_user_id = tu.id
+    WHERE i.id = ?
+  `, [invitationId], (err, inv) => {
+    if (err || !inv) {
+      return res.status(404).json({ error: 'Invitation not found' });
+    }
+
+    // Allow: pastor who invited, the preacher, secretaries of both fields, or admin
+    const canView = (role === 'admin') ||
+                    (role === 'pastor' && userId === inv.requesting_pastor_id) ||
+                    (role === 'preacher' && userId === inv.target_user_id) ||
+                    (role === 'secretary' && (field_id === inv.pastor_field_id || field_id === inv.preacher_field_id));
+
+    if (!canView) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
+    db.all(`
+      SELECT id, invitation_id, preacher_id, uploaded_by_pastor_id, document_url, 
+             document_type, file_name, uploaded_at
+      FROM insurance_documents
+      WHERE invitation_id = ?
+      ORDER BY uploaded_at DESC
+    `, [invitationId], (err, docs) => {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json(docs || []);
+    });
+  });
+});
+
+// Get Insurance Documents for a Preacher
+app.get('/api/insurance/preacher/:id', authenticateToken, (req, res) => {
+  const { role, id: userId, field_id } = req.user;
+  const preacherId = parseInt(req.params.id);
+
+  // Only allow: the preacher themselves, admin, or secretaries in the preacher's field
+  if (role === 'preacher' && userId !== preacherId) {
+    return res.status(403).json({ error: 'Can only view your own insurance documents' });
+  }
+
+  if (role === 'secretary' || role === 'pastor') {
+    // Verify secretary/pastor is in the preacher's field
+    db.get(`SELECT field_id FROM users WHERE id = ?`, [preacherId], (err, preacher) => {
+      if (err || !preacher || (role === 'secretary' && field_id !== preacher.field_id)) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
+      fetchDocuments();
+    });
+  } else if (role === 'admin') {
+    fetchDocuments();
+  } else {
+    return res.status(403).json({ error: 'Access denied' });
+  }
+
+  function fetchDocuments() {
+    db.all(`
+      SELECT id, invitation_id, preacher_id, uploaded_by_pastor_id, document_url, 
+             document_type, file_name, uploaded_at
+      FROM insurance_documents
+      WHERE preacher_id = ?
+      ORDER BY uploaded_at DESC
+      LIMIT 100
+    `, [preacherId], (err, docs) => {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json(docs || []);
+    });
+  }
+});
+
+// Delete Insurance Document
+app.delete('/api/insurance/:id', authenticateToken, (req, res) => {
+  const { role, id: userId } = req.user;
+  const documentId = parseInt(req.params.id);
+
+  if (role !== 'pastor' && role !== 'admin') {
+    return res.status(403).json({ error: 'Only pastors or admins can delete insurance documents' });
+  }
+
+  db.get(`SELECT * FROM insurance_documents WHERE id = ?`, [documentId], (err, doc) => {
+    if (err || !doc) {
+      return res.status(404).json({ error: 'Document not found' });
+    }
+
+    // Only the pastor who uploaded or admin can delete
+    if (role === 'pastor' && doc.uploaded_by_pastor_id !== userId) {
+      return res.status(403).json({ error: 'You can only delete documents you uploaded' });
+    }
+
+    db.run(`DELETE FROM insurance_documents WHERE id = ?`, [documentId], (err) => {
+      if (err) return res.status(500).json({ error: err.message });
+
+      logAudit(userId, 'INSURANCE_DELETED', {
+        document_id: documentId,
+        invitation_id: doc.invitation_id
+      });
+
+      res.json({ message: 'Insurance document deleted' });
+    });
+  });
+});
+
